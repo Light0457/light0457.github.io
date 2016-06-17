@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Light Spacetime</title>
+    <description>Hero is an awesome description for my standalone blog here.  Even though I have no any idea about writing anyhing here.
+</description>
+    <link>http://light0457.github.io//</link>
+    <atom:link href="http://light0457.github.io//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 17 Jun 2016 00:32:37 +0800</pubDate>
+    <lastBuildDate>Fri, 17 Jun 2016 00:32:37 +0800</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>Learning jkelly To Write Blog</title>
+        <description>&lt;h1 id=&quot;how-to-write-a-blog-in-drafts-&quot;&gt;How to write a blog in drafts ?&lt;/h1&gt;
+&lt;p&gt;Just write it like an normal post.&lt;/p&gt;
+
+&lt;h1 id=&quot;why-to-write-post-as-drafts-&quot;&gt;Why to write post as drafts ?&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;It can be published with config with –drafts param to command ‘jekyll serve’ or ‘jekyll build’.&lt;/li&gt;
+  &lt;li&gt;It’s date will auto be updated.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 17 Jun 2016 00:32:37 +0800</pubDate>
+        <link>http://light0457.github.io//2016/06/17/jeklly_blog.html</link>
+        <guid isPermaLink="true">http://light0457.github.io//2016/06/17/jeklly_blog.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Html Learning Note</title>
+        <description>&lt;h1 id=&quot;title&quot;&gt;title元素(标签)&lt;/h1&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;title元素 可定义文档的标题。
+* 浏览器会以特殊的方式来使用标题，并且通常把它放置在浏览器窗口的标题栏或状态栏上。
+* 同样，当把文档加入用户的链接列表或者收藏夹或书签列表时，标题将成为该文档链接的默认名称。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;htmlcss&quot;&gt;HTML与css相互引用，搭建一个样式需要交叉&lt;/h1&gt;
+</description>
+        <pubDate>Fri, 17 Jun 2016 00:32:37 +0800</pubDate>
+        <link>http://light0457.github.io//2016/06/17/html_css_learning.html</link>
+        <guid isPermaLink="true">http://light0457.github.io//2016/06/17/html_css_learning.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>自动更新Mac下ShadowsocksX的服务器配置</title>
+        <description>&lt;h1 id=&quot;section&quot;&gt;概述&lt;/h1&gt;
+
+&lt;p&gt;为啥写这篇文章呢～～主要是想记录下一些琐碎的点。最近折腾“科学上网”查到的资料点太琐碎了，不记下来可惜了点，没准以后还用到。单独文章来记最方便了。 &lt;br /&gt;
+最近一直用&lt;a href=&quot;https://sourceforge.net/projects/shadowsocksgui/&quot;&gt;ShadowsocksX&lt;/a&gt;来上谷歌，服务器用的是从&lt;a href=&quot;http://www.ishadowsocks.net/&quot;&gt;iShadowsocks&lt;/a&gt;网站获取的免费服务器。无耐何它每六个小时更换一次密码。&lt;br /&gt;
+在老老实实手动更新密码一大段时间后，让我知道了mac上的这个软件：&lt;a href=&quot;https://www.alfredapp.com/&quot;&gt;Alfred&lt;/a&gt;这个软件，这个软件可以方便地运行脚本、启动程序等等小功能。就是它的这些功能使我萌发了写个脚本自动更新服务器密码的想法。才有了这篇文章。&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 17 Jun 2016 00:32:37 +0800</pubDate>
+        <link>http://light0457.github.io//2016/06/17/ShadowsocksAutoGrabber.html</link>
+        <guid isPermaLink="true">http://light0457.github.io//2016/06/17/ShadowsocksAutoGrabber.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>Welcome to Light Spacetime!</title>
+        <description>&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Hi, #{name}&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;Tom&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#=&amp;gt; prints &#39;Hi, Tom&#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 13 Jun 2016 12:43:20 +0800</pubDate>
+        <link>http://light0457.github.io//lightspacetime/2016/06/13/welcome-to-lightspace.html</link>
+        <guid isPermaLink="true">http://light0457.github.io//lightspacetime/2016/06/13/welcome-to-lightspace.html</guid>
+        
+        
+        <category>LightSpacetime</category>
+        
+      </item>
+    
+  </channel>
+</rss>
