@@ -6,7 +6,7 @@
 title: Light's space
 subtitle:
 description:
-author: John Doe
+author: KIRA·Light 
 language:
 timezone:
 
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: yelee
+theme: gstyle
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
