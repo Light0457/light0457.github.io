@@ -1,117 +1,110 @@
-$(function() {
-    var isPhone = $(window).width() < 768;
+require([], function (){
 
-    init();
+	var isMobileInit = false;
+	var loadMobile = function(){
+		require(['/js/mobile.js'], function(mobile){
+			mobile.init();
+			isMobileInit = true;
+		});
+	}
+	var isPCInit = false;
+	var loadPC = function(){
+		require(['/js/pc.js'], function(pc){
+			pc.init();
+			isPCInit = true;
+		});
+	}
 
-    function init() {
-        // $('.material-preloader').hide();
-        initialNavToggle();
-        setupRipple();
-        slidingBorder();
-        toc();
-    }
+	var browser={
+	    versions:function(){
+	    var u = window.navigator.userAgent;
+	    return {
+	        trident: u.indexOf('Trident') > -1, //IE内核
+	        presto: u.indexOf('Presto') > -1, //opera内核
+	        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+	        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+	        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+	        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+	        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+	        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+	        iPad: u.indexOf('iPad') > -1, //是否为iPad
+	        webApp: u.indexOf('Safari') == -1 ,//是否为web应用程序，没有头部与底部
+	        weixin: u.indexOf('MicroMessenger') == -1 //是否为微信浏览器
+	        };
+	    }()
+	}
 
-    function slidingBorder() {
-        // sliding border
-        var $activeState = $('.nav-indicator', 'nav'),
-            $navParent = $('.menu-wrapper', 'nav'),
-            overNav = false,
-            $hoveredLink,
-            $activeLink = $("ul.menus li.active a"),
-            activeHideTimeout;
-        setActiveLink(true);
-        $('.menu-wrapper ul.menus li').on('mousemove', onLinkHover);
-        $('.menu-wrapper').on('mouseleave', onLinksLeave);
+	$(window).bind("resize", function(){
+		if(isMobileInit && isPCInit){
+			$(window).unbind("resize");
+			return;
+		}
+		var w = $(window).width();
+		if(w >= 700){
+			loadPC();
+		}else{
+			loadMobile();
+		}
+	});
 
-        function onLinkHover(e) {
-            if (!isPhone) {
-                $hoveredLink = e.target ? $(e.target) : e;
-                if (!$hoveredLink.is('li')) {
-                    $hoveredLink = $hoveredLink.parent('li');
-                }
-                var left = $hoveredLink.offset().left - $navParent.offset().left,
-                    width = $hoveredLink.width();
-                if (0 != $activeLink.length || overNav) {
-                    $activeState.css({
-                        transform: "translate3d(" + left + "px, 0, 0) scaleX(" + width / 100 + ")"
-                    });
-                } else {
-                    clearTimeout(activeHideTimeout),
-                        $activeState.css({
-                            transform: "translate3d(" + (left + width / 2) + "px, 0, 0) scaleX(0.001)"
-                        });
-                    setTimeout(function() {
-                        $activeState.addClass("animate-indicator").css({
-                            transform: "translate3d(" + left + "px, 0, 0) scaleX(" + width / 100 + ")"
-                        })
-                    }, 10);
-                }
-                overNav = true;
-            }
-        }
+	if(browser.versions.mobile === true || $(window).width() < 700){
+		loadMobile();
+	}else{
+		loadPC();
+	}
 
-        function onLinksLeave(e) {
-            if (!isPhone) {
-                if (0 == $activeLink.length) {
-                    var left = $hoveredLink.offset().left - $navParent.offset().left,
-                        width = $hoveredLink.width();
-                    $activeState.css({
-                        'transform': "translate3d(" + (left + width / 2) + "px, 0, 0) scaleX(0.001)"
-                    });
-                    activeHideTimeout = setTimeout(function() {
-                        $activeState.removeClass("animate-indicator")
-                    }, 200);
-                } else {
-                    onLinkHover($activeLink);
-                }
-                overNav = false;
-            }
-        }
+	//是否使用fancybox
+	if(yiliaConfig.fancybox === true){
+		require(['/fancybox/jquery.fancybox.js'], function(pc){
+			var isFancy = $(".isFancy");
+			if(isFancy.length != 0){
+				var imgArr = $(".article-inner img");
+				for(var i=0,len=imgArr.length;i<len;i++){
+					var src = imgArr.eq(i).attr("src");
+					var title = imgArr.eq(i).attr("alt");
+					imgArr.eq(i).replaceWith("<a href='"+src+"' title='"+title+"' rel='fancy-group' class='fancy-ctn fancybox'><img src='"+src+"' title='"+title+"'></a>");
+				}
+				$(".article-inner .fancy-ctn").fancybox();
+			}
+		});
+		
+	}
+	//是否开启动画
+	if(yiliaConfig.animate === true){
 
-        function setActiveLink(load) {
-            if ($activeLink.length > 0) {
-                var left = $activeLink.offset().left - $navParent.offset().left;
-                $activeState.css({
-                    'transform': "translate3d(" + (left + $activeLink.width() / 2) + "px, 0, 0) scaleX(0.001)"
-                });
-                setTimeout(function() {
-                    $activeState.addClass("animate-indicator"),
-                        onLinkHover($activeLink)
-                }, 100);
-            }
-        }
-    }
-
-    function toc() {
-        if (!isPhone) {
-            //toc
-            $('#toc').html('');
-            $('#toc').tocify({
-                'selectors': 'h2,h3',
-                'extendPage': false,
-                'theme': 'none',
-                'scrollHistory':false
-            });
-        }
-    }
-
-    function initialNavToggle() {
-        //nav icon morphing
-        $('.nav-toggle-icon').click(function() {
-            $('body').toggleClass('nav-active');
-            $(this).toggleClass('active').find('.material-hamburger').toggleClass('opened');
-            $('.menu-wrapper').toggleClass('active');
-            $('.logo').toggleClass('fixed');
-        });
-    }
-
-    function setupRipple() {
-        // ripple click http://fian.my.id/Waves/#start
-        Waves.attach('.wave');
-        Waves.attach('.pagination a');
-        Waves.attach('.pager .pager-item', ['waves-button']);
-        Waves.attach('.btn', ['waves-button']);
-        Waves.init();
-    }
-
-})
+		require(['/js/jquery.lazyload.js'], function(){
+			//avatar
+			$(".js-avatar").attr("src", $(".js-avatar").attr("lazy-src"));
+			$(".js-avatar")[0].onload = function(){
+				$(".js-avatar").addClass("show");
+			}
+		});
+		
+		if(yiliaConfig.isHome === true){
+			//content
+			function showArticle(){
+				$(".article").each(function(){
+					if( $(this).offset().top <= $(window).scrollTop()+$(window).height() && !($(this).hasClass('show')) ) {
+						$(this).removeClass("hidden").addClass("show");
+						$(this).addClass("is-hiddened");
+					}else{
+						if(!$(this).hasClass("is-hiddened")){
+							$(this).addClass("hidden");
+						}
+					}
+				});
+			}
+			$(window).on('scroll', function(){
+				showArticle();
+			});
+			showArticle();
+		}
+		
+	}
+	
+	//是否新窗口打开链接
+	if(yiliaConfig.open_in_new == true){
+		$(".article a[href]").attr("target", "_blank")
+	}
+	
+});
