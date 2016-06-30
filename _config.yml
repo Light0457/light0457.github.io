@@ -70,4 +70,4 @@ theme: yilia
 deploy:
   type: git
   repo: git@github.com:Light0457/light0457.github.io.git
-  branch: master
+  branch: gh-pages
