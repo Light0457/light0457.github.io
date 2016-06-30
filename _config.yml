@@ -12,14 +12,14 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://light0457.github.io
+url: https://light0457.github.io/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
 # Directory
 source_dir: source
-public_dir: public
+public_dir: .public
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
@@ -68,6 +68,6 @@ theme: yilia
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
-  repo: git@github.com:Light0457/light0457.github.io.git
-  branch: gh-pages
+  # type: git
+  # repo: git@github.com:Light0457/light0457.github.io.git
+  # branch: gh-pages
