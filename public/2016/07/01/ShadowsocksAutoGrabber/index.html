@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>科学上网便捷小工具 | Light&#39;s space</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、概述为啥写这篇文章呢～～主要是想记录下一些琐碎的点。最近折腾“科学上网”查到的信息点太琐碎了，实在构不成完整的知识体系，但相关资料不记下来又可惜了点，没准以后还用到。写篇文章来记最容易检索到了。最近一直用ShadowsocksX来上谷歌，服务器用的是从iShadowsocks网站获取的免费服务器。无耐何它每六个小时更换一次密码。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="科学上网便捷小工具">
+<meta property="og:url" content="https://light0457.github.io/2016/07/01/ShadowsocksAutoGrabber/index.html">
+<meta property="og:site_name" content="Light's space">
+<meta property="og:description" content="一、概述为啥写这篇文章呢～～主要是想记录下一些琐碎的点。最近折腾“科学上网”查到的信息点太琐碎了，实在构不成完整的知识体系，但相关资料不记下来又可惜了点，没准以后还用到。写篇文章来记最容易检索到了。最近一直用ShadowsocksX来上谷歌，服务器用的是从iShadowsocks网站获取的免费服务器。无耐何它每六个小时更换一次密码。">
+<meta property="og:updated_time" content="2016-07-04T00:59:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="科学上网便捷小工具">
+<meta name="twitter:description" content="一、概述为啥写这篇文章呢～～主要是想记录下一些琐碎的点。最近折腾“科学上网”查到的信息点太琐碎了，实在构不成完整的知识体系，但相关资料不记下来又可惜了点，没准以后还用到。写篇文章来记最容易检索到了。最近一直用ShadowsocksX来上谷歌，服务器用的是从iShadowsocks网站获取的免费服务器。无耐何它每六个小时更换一次密码。">
+  
+    <link rel="alternative" href="/atom.xml" title="Light&#39;s space" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/avatar/light_avatar_joke.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/avatar/light_avatar_joke.png" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">KIRA·Light</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://light0457.github.io/" title="github">github</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Alfred/" style="font-size: 10px;">Alfred</a> <a href="/tags/Shadowsocks/" style="font-size: 10px;">Shadowsocks</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/plist/" style="font-size: 10px;">plist</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a>
+					</div>
+				</section>
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">KIRA·Light</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/avatar/light_avatar_joke.png" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">KIRA·Light</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://light0457.github.io/" title="github">github</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-ShadowsocksAutoGrabber" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/07/01/ShadowsocksAutoGrabber/" class="article-date">
+  	<time datetime="2016-06-30T17:30:18.000Z" itemprop="datePublished">2016-07-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      科学上网便捷小工具
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Alfred/">Alfred</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shadowsocks/">Shadowsocks</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/plist/">plist</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h1><p>为啥写这篇文章呢～～主要是想记录下一些琐碎的点。最近折腾“科学上网”查到的信息点太琐碎了，实在构不成完整的知识体系，但相关资料不记下来又可惜了点，没准以后还用到。写篇文章来记最容易检索到了。<br>最近一直用<a href="https://sourceforge.net/projects/shadowsocksgui/" target="_blank" rel="external">ShadowsocksX</a>来上谷歌，服务器用的是从<a href="http://www.ishadowsocks.net/" target="_blank" rel="external">iShadowsocks</a>网站获取的免费服务器。无耐何它每六个小时更换一次密码。<br><a id="more"></a><br>在老老实实手动更新密码一大段时间后，让我知道了mac上的这个软件：<a href="https://www.alfredapp.com/" target="_blank" rel="external">Alfred</a>这个软件，这个软件可以方便地运行脚本、启动程序等等小功能。就是它的这些功能使我萌发了写个脚本自动更新服务器密码的想法。才有了这篇文章。</p>
+<h1 id="二、抓取服务器地址信息"><a href="#二、抓取服务器地址信息" class="headerlink" title="二、抓取服务器地址信息"></a>二、抓取服务器地址信息</h1><p>个人偏好使用Python写这一类的小工具，库多，写着方便，所以下面的脚本大部分都是用Python写的。  </p>
+<h2 id="2-1-在Python中访问网站iShadowsocks"><a href="#2-1-在Python中访问网站iShadowsocks" class="headerlink" title="2.1 在Python中访问网站iShadowsocks"></a>2.1 在Python中访问网站<a href="http://www.ishadowsocks.net/" target="_blank" rel="external">iShadowsocks</a></h2><p>要抓取服务器地址信息嘛，访问网站在把网页内容下下来是必须的。在Python中做这点倒是挺简单的，像下面一小段代码就好了。</p>
+<pre><code>import urllib2
+html_content = urllib2.urlopen(&quot;http://www.ishadowsocks.net/&quot;).read()
+</code></pre><h2 id="2-2-解析网页内容获取服务器地址"><a href="#2-2-解析网页内容获取服务器地址" class="headerlink" title="2.2 解析网页内容获取服务器地址"></a>2.2 解析网页内容获取服务器地址</h2><p>python中解析html网页内容的库有好几个，有<a href="https://docs.python.org/2/library/htmlparser.html" target="_blank" rel="external">HTMLParser</a>,<a href="https://docs.python.org/2/library/htmllib.html" target="_blank" rel="external">HtmlLib</a>,<a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/" target="_blank" rel="external">BeautifulSoup</a>。  </p>
+<ul>
+<li><strong>HtmlLib</strong>: 已经被官方抛弃掉不建议使用了，不去考虑。  </li>
+<li><strong>HTMLParser</strong>: 看了下HTMLParser的使用例子，需要写个解析类继承于HTMLParser。这种方式并不喜欢，因为类继承不方便组织代码，同时还得看需要重载什么函数，重载的函数负责什么职责。</li>
+<li><strong>BeautifulSoup</strong>: 对比了下BeautifulSoup，用起来直接是按键值查找，有种将html文件当json来用的感觉，挺好的，写起来省时省力些。  </li>
+</ul>
+<p>所以最后用了BeautifulSoup这个库来解析html。<br>打开谷歌浏览器看了下该网站的网页代码，虽然我对html并不熟悉，但那个网页还是挺简洁的，还带了良好的溈，看了一下，</p>
+<ol>
+<li>我们需要的服务器地址的大概位置就是在一个tag是section,id是free的一个容器里面,  </li>
+<li>每个服务器地址的内容使用了一样的div样式，</li>
+<li>服务器地址的每一项内容都是用h4来显示的   </li>
+</ol>
+<p>总的来说，内容要挺有规律的，要抓取出来还是比较轻松的。   </p>
+<pre><code>soup = BeautifulSoup(html_content)
+free_part = soup.find(&quot;section&quot;,id = &quot;free&quot;)
+free_account_parts = free_part.find_all(&quot;div&quot;,class_ = &quot;col-lg-4 text-center&quot;)
+key_parsers = {
+    &quot;server&quot;: lambda str : u&quot;服务器地址&quot; in str,
+    &quot;server_port&quot;: lambda str : u&quot;端口&quot; in str,
+    &quot;password&quot;: lambda str : u&quot;密码&quot; in str,
+    &quot;method&quot;: lambda str : u&quot;加密方式&quot; in str
+}
+free_server_infos = []  //** 存储最终抓取到的结果
+for free_account_part in free_account_parts:             
+    account_infos = free_account_part.find_all(&quot;h4&quot;)
+    for account_info in account_infos:
+        server_info = {}
+        values = account_info.text.split(u&apos;:&apos;)
+        if len(values) &lt;= 1:
+            continue
+        for (key, parser) in key_parsers.items():
+            if parser(values[0]):
+                server_info[key] = values[1]
+        free_server_infos.append(server_info)
+</code></pre><h1 id="三、更新ShadowsocksX的配置"><a href="#三、更新ShadowsocksX的配置" class="headerlink" title="三、更新ShadowsocksX的配置"></a>三、更新ShadowsocksX的配置</h1><p>ShadowsocksX这个软件呢用着还是挺方便的，无奈我一直找不到它配置的地方。谷歌后在<a href="https://github.com/shadowsocks/shadowsocks-iOS/issues/150" target="_blank" rel="external">它的github issue页面</a>发现，Mac下的这个ShadowsocksX软件并没有像其它版本的Shadowsocks一样提供一个可配置的json文件，而使用了苹果的plist文件来存储。它的配置文件就是这个：~/Library/Preferences/clowwindy.ShadowsocksX.plist。</p>
+<h2 id="3-1-使用Python读写plist配置文件"><a href="#3-1-使用Python读写plist配置文件" class="headerlink" title="3.1 使用Python读写plist配置文件"></a>3.1 使用Python读写plist配置文件</h2><p>python读写plist的库我是搜到了两个,一个是<a href="https://docs.python.org/2/library/plistlib.html" target="_blank" rel="external">plistlib</a>,另一个则是<a href="https://pypi.python.org/pypi/biplist/1.0.1" target="_blank" rel="external">biplist</a>,两个库接口用起来都差不多。由于plistlib是官方库，刚开始选了它。但拿它来读其它plist文件很正常，拿来读clowwindy.ShadowsocksX.plist这个文件却会报错。而用biplist却不会。因此最终选择了biplist做为这次读写plist文件的python库。<br>读写plist文件还是很简单，几句代码就好了</p>
+<pre><code>//** 获取当前用户下的clowwindy.ShadowsocksX.plist路径
+import os
+plist_file_path = os.path.join(os.path.expandvars(&apos;$HOME&apos;),&quot;Library/Preferences/clowwindy.ShadowsocksX.plist&quot;)
+
+import biplist
+plist = biplist.readPlist(plist_file_path)
+</code></pre><p>由于服务器配置是存在clowwindy.ShadowsocksX.plist这个文件中的content字段，而content字段通过biplist读出来后是一个字符串类型，格式是json格式的，所以我们可以把它用json库解析成我们方便用的字典  </p>
+<pre><code>import json
+json_config = json.loads(plist[&quot;config&quot;])
+</code></pre><p>然后就是将需要更新的内容写进去了。具体写啥就不赘述了。只提下踩到的坑点：</p>
+<ul>
+<li><p>clowwindy.ShadowsocksX.plist文件中”content”的字段，在Finder下查看是一段经过base64后的字符串，但这并不需要作者手动去base64下那个字段，只要是写入时指定存储进去的内容是Data类型的，plist库就会对应的将其base64后写进去。如果自己手动base64后再当成字符串存储进去，产生的文件是不一样的。使用biplist库则是使用biplist.Data包裹一下要写的内容</p>
+<pre><code>plist[&quot;config&quot;] = biplist.Data(json.dumps(json_config, indent=None, separators=(&apos;,&apos;, &apos;:&apos;)))
+</code></pre></li>
+</ul>
+<h2 id="3-2-更新Mac-OS-X系统中的plist缓存"><a href="#3-2-更新Mac-OS-X系统中的plist缓存" class="headerlink" title="3.2 更新Mac OS X系统中的plist缓存"></a>3.2 更新Mac OS X系统中的plist缓存</h2><p>修改完clowwindy.ShadowsocksX.plist这个文件后，神奇的发现它并没有生效，让我一度怀疑ShadowsocksX的配置文件是不是这个。直接在ShadowsocksX更改配置信息，内容确实会更新到这个文件上面来。然后直接修改这个文件的内容，信息却不会及时更新到ShadowsocksX的界面上去。<br>经过n多试验后，发现只有完全重启了mac，才能将修改的配置文件生效。但这显然不够满足我的需求，更新了帐号还要重启那就太蛋疼了。<br>谷歌搜索如何立即生效plist文件，能找到的信息实在是少。几经周折，终于在<a href="">http://hints.macworld.com/article.php?story=20130908042828630</a>这个网页中，在网友的评论里看到相关的信息。<br>问题所在：   </p>
+<ul>
+<li>There are many hints here and on the net involving changing user defaults by <strong>running defaults write or directly editing the .plist files in Library/Preferences</strong>. Until 10.9, restarting the program was enough to apply the new defaults.<strong>Since OS X Mavericks</strong>, the defaults system is caching the preferences <strong>system-wide (i.e. not in the application’s process!)</strong> to improve performance of the user defaults API. （也就是说，从OS X Mavericks之后，使用mac命令行defaults更改Library/Preferences下面的plist文件后并不会立即生效，必须重启后才生效，因为OS X Mavericks会缓存这些配置，以提高使用defaults读写plist文件时的效率。但是在此却给了我好大烦恼的说～）</li>
+<li>The API documentation states that the cache is synchronized with the on-disk plist file contents periodically, but does not indicate how often, let alone how to flush the cache manually.Logging out and back in appears to flush the user defauts cache, but other than that, <em>the defaults command is currently the only way to reliably change preferences <strong>without waiting for the timeout</strong></em>.（说是API文档虽然指出会周期性的同步缓存，但没说是周期是多久。但至少我们知道了defaults操作一下plist文件是可以直接更新缓存的，不用等待系统某个时机去更新缓存）   </li>
+</ul>
+<p>看到了问题所在，同时也在评论中看到了解决方法：</p>
+<ul>
+<li>This had me stumped for a while while trying to restore my preference files. So, after copying or editing a plist, for example com.rstudio.desktop.plist , just run <strong>defaults read com.rstudio.desktop</strong> which should <em>sync the cache</em>.（也就是说执行一下defaults read **.plist文件就可以更新系统中的plist缓存了）   </li>
+</ul>
+<p>那这样我们就可以把更新缓存的代码在python中补上,defaults read一下配置文件。</p>
+<pre><code>os.system(&quot;defaults read &quot; + plist_file_path)
+</code></pre><h1 id="四、Alfred中按全局快捷键更新服务器信息"><a href="#四、Alfred中按全局快捷键更新服务器信息" class="headerlink" title="四、Alfred中按全局快捷键更新服务器信息"></a>四、Alfred中按全局快捷键更新服务器信息</h1><p>用Alfred配置快捷键执行某个脚本挺简单的，也不赘述了。只说下按快捷键后要执行的脚本内容。</p>
+<ol>
+<li><p>为了更新ShadowsocksX的配置，需要把运行中的ShadowsocksX给关掉（当然没有运行的就不用了）。<br>这个与系统直接打交道的用shell命令简单些。<br>mac下杀死指定进程的shell命令是kill，不过这个只能通过指定进程的pid来杀，没法通过进程名来杀。<br>然后查到有个killall命令，可以杀掉指定进程名的进程（据说这个在unix系统上不能随便执行～）。<br>不过对于我们来说够用了。执行shell命令:</p>
+<pre><code>killall ShadowsocksX
+</code></pre></li>
+<li><p>执行我们刚刚写好的python脚本。<br>这边有坑，在Alfred执行的python环境不一定是我们写python脚本时的环境，所以如果无法执行，则只好手动指定python的路径来执行我们的脚本了，例如：</p>
+<pre><code>/Library/Frameworks/Python.framework/Versions/2.7/bin/python ShadowsocksXAutoSetter.py
+</code></pre></li>
+</ol>
+<hr>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/07/01/git/GitChangeCommiterName/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">修正git中错误的提交者姓名</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 KIRA·Light
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
