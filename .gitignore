@@ -1,3 +1,4 @@
 .public/
 public/
 .deploy_git/
+db.json
