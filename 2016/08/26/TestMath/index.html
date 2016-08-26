@@ -4,17 +4,38 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Light&#39;s space</title>
+  <title>TestMath | Light&#39;s space</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Light's space">
-<meta property="og:url" content="http://light0457.github.io/index.html">
+  <meta name="description" content="Projection Matrix for Planar Shadows
+We will here derive the transformation matrix M for projecting an object down to a planar surface.  
+
+1. 平面方程
+定义：如果一非零向量垂直于一平面，这向量就叫做该平面的法线向量．   
+
+法线向量的特征： 垂直于平面内的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TestMath">
+<meta property="og:url" content="http://light0457.github.io/2016/08/26/TestMath/index.html">
 <meta property="og:site_name" content="Light's space">
-<meta property="og:description">
+<meta property="og:description" content="Projection Matrix for Planar Shadows
+We will here derive the transformation matrix M for projecting an object down to a planar surface.  
+
+1. 平面方程
+定义：如果一非零向量垂直于一平面，这向量就叫做该平面的法线向量．   
+
+法线向量的特征： 垂直于平面内的">
+<meta property="og:image" content="http://note.youdao.com/yws/api/personal/file/WEBf7ec614e95567fbb743b885b5a9c68a2?method=download&shareKey=5aacb63ac647ee35e2c489798ddd0085">
+<meta property="og:updated_time" content="2016-08-26T11:37:54.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Light's space">
-<meta name="twitter:description">
+<meta name="twitter:title" content="TestMath">
+<meta name="twitter:description" content="Projection Matrix for Planar Shadows
+We will here derive the transformation matrix M for projecting an object down to a planar surface.  
+
+1. 平面方程
+定义：如果一非零向量垂直于一平面，这向量就叫做该平面的法线向量．   
+
+法线向量的特征： 垂直于平面内的">
+<meta name="twitter:image" content="http://note.youdao.com/yws/api/personal/file/WEBf7ec614e95567fbb743b885b5a9c68a2?method=download&shareKey=5aacb63ac647ee35e2c489798ddd0085">
   
     <link rel="alternative" href="/atom.xml" title="Light&#39;s space" type="application/atom+xml">
   
@@ -142,9 +163,7 @@
 	</div>
 </nav>
 
-      <div class="body-wrap">
-  
-    <article id="post-TestMath" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-TestMath" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2016/08/26/TestMath/" class="article-date">
@@ -160,12 +179,19 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/26/TestMath/">TestMath</a>
+    <h1 class="article-title" itemprop="name">
+      TestMath
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -264,16 +290,19 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/08/14/Unity/TextCircleCurveEffect/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Unity UI文字绕圆心扭曲效果</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -284,268 +313,6 @@
 
 
 
-
-  
-    <article id="post-Unity/TextCircleCurveEffect" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/08/14/Unity/TextCircleCurveEffect/" class="article-date">
-  	<time datetime="2016-08-14T03:14:23.000Z" itemprop="datePublished">2016-08-14</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/14/Unity/TextCircleCurveEffect/">Unity UI文字绕圆心扭曲效果</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h1><p>使文字绕着某一圆心排列。（图片效果后面补齐）  </p>
-<h1 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h1><h3 id="输入"><a href="#输入" class="headerlink" title="输入:"></a>输入:</h3><ul>
-<li>w, 文字总宽度   </li>
-<li>h, 文字总高度</li>
-<li>n, 圆心离文字顶部的距离(按n倍h来计算),因此圆心离文字底部的距离为(n+1)*h</li>
-<li>inVerts = [{x1,y1},{x2,y2}…], 文字顶点序列  </li>
-<li>anchor, 圆心延y轴投影到文字中的x轴上的归一化位置[0,1]</li>
-</ul>
-<h3 id="输出"><a href="#输出" class="headerlink" title="输出:"></a>输出:</h3><ul>
-<li>outVerts = [{x1’,y1’},{x2’,y2’}…],调整完位置后的顶点
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Circular/">Circular</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Image-Effect/">Image Effect</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Text/">Text</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Unity/">Unity</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/08/14/Unity/TextCircleCurveEffect/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-ShadowsocksAutoGrabber" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/08/13/ShadowsocksAutoGrabber/" class="article-date">
-  	<time datetime="2016-08-13T00:29:04.000Z" itemprop="datePublished">2016-08-13</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/13/ShadowsocksAutoGrabber/">科学上网便捷小工具</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h1><p>为啥写这篇文章呢～～主要是想记录下一些琐碎的点。最近折腾“科学上网”查到的信息点太琐碎了，实在构不成完整的知识体系，但相关资料不记下来又可惜了点，没准以后还用到。写篇文章来记最容易检索到了。<br>最近一直用<a href="https://sourceforge.net/projects/shadowsocksgui/">ShadowsocksX</a>来上谷歌，服务器用的是从<a href="http://www.ishadowsocks.net/">iShadowsocks</a>网站获取的免费服务器。无耐何它每六个小时更换一次密码。<br>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Alfred/">Alfred</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Shadowsocks/">Shadowsocks</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/plist/">plist</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/">python</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/08/13/ShadowsocksAutoGrabber/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-ssh/SSHNote" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/08/13/ssh/SSHNote/" class="article-date">
-  	<time datetime="2016-08-13T00:29:04.000Z" itemprop="datePublished">2016-08-13</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/13/ssh/SSHNote/">SSH使用杂记</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="SSH网络协议使用杂记"><a href="#SSH网络协议使用杂记" class="headerlink" title="SSH网络协议使用杂记"></a><a href="https://zh.wikipedia.org/wiki/Secure_Shell">SSH网络协议</a>使用杂记</h1><p>最近寻觅各git托管服务，都选择了用ssh协议来拉取。以及最近因为各种原因接触得比较多，碰到的问题也多了，在这里面记录一下。  </p>
-<ul>
-<li>使用<pre><code>ssh-keygen -t rsa -C &quot;youremail-address&quot;
-</code></pre>创建ssh密钥时，<ol>
-<li>要求输入生成文件的目录，此时输入的目录需要是完整路径（也不能用～表示Home目录） </li>
-<li>要求输入passphrase,这个从目前的用法看就是即将生成的密钥文件的密码，把它添加到ssh agnet的时候需要输入这个密码</li>
-</ol>
-</li>
-</ul>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssh/">ssh</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/08/13/ssh/SSHNote/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-git/GitChangeCommiterName" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/08/13/git/GitChangeCommiterName/" class="article-date">
-  	<time datetime="2016-08-13T00:29:04.000Z" itemprop="datePublished">2016-08-13</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/08/13/git/GitChangeCommiterName/">修正git中错误的提交者姓名</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="情景"><a href="#情景" class="headerlink" title="情景"></a>情景</h1><p>在一个仓库上提交时，用户名和邮箱给配置错了，看记录才知道。这可不能接受，看着可不舒服。幸好<a href="https://help.github.com/articles/changing-author-info/">github帮助页</a>（此帮助页有<a href="http://dangzhiqiang.blog.51cto.com/7961271/1657864">相对应的中文版本</a>）上有提供这种情况下的方法。<br>帮助页有下面的警告，对于公有仓库最好不去干这种改记录的事。不过我这是私有仓库就无所谓了。</p>
-<pre><code>Warning: This action is destructive to your repository&apos;s history. If you&apos;re collaborating on a repository with others, it&apos;s considered bad practice to rewrite published history. You should only do this in an emergency.
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/08/13/git/GitChangeCommiterName/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-  
 </div>
       <footer id="footer">
   <div class="outer">
@@ -569,8 +336,8 @@
 		fancybox: true,
 		mathjax: true,
 		animate: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
