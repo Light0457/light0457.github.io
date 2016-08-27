@@ -159,85 +159,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Projection-Matrix-for-Planar-Shadows"><a href="#Projection-Matrix-for-Planar-Shadows" class="headerlink" title="Projection Matrix for Planar Shadows"></a>Projection Matrix for Planar Shadows</h2><blockquote>
-<p>We will here derive the transformation matrix $M$ for projecting an object down to a planar surface.  </p>
+        <h2 id="projection-matrix-for-planar-shadows">Projection Matrix for Planar Shadows</h2>
+<blockquote>
+<p>We will here derive the transformation matrix <span class="math inline">\(M\)</span> for projecting an object down to a planar surface.</p>
 </blockquote>
-<h3 id="1-平面方程"><a href="#1-平面方程" class="headerlink" title="1. 平面方程"></a>1. 平面方程</h3><blockquote>
-<p>定义：如果一非零向量垂直于一平面，这向量就叫做该平面的<strong>法线向量</strong>．   </p>
-<hr>
+<h3 id="平面方程">1. 平面方程</h3>
+<blockquote>
+<p>定义：如果一非零向量垂直于一平面，这向量就叫做该平面的<strong>法线向量</strong>．</p>
+<hr />
 <p>法线向量的特征： 垂直于平面内的任一向量．</p>
 </blockquote>
-<p>因此，若假设已知:   </p>
-<blockquote>
-<ol>
-<li>平面法线向量 $\vec{n} = (A,B,C)$,  </li>
-<li>平面上一点$X_0(x_0,y_0,z_0)$   </li>
-</ol>
-</blockquote>
-<p>设定:</p>
-<blockquote>
-<p>平面上任意一点为$X(x,y,z)$  </p>
-</blockquote>
-<p>则，必有:   </p>
-<blockquote>
-<p>$\vec{X_0M}\ \bot\ \vec{n} \Rightarrow \vec{X_0X} \cdot \vec{n} = 0$    </p>
-</blockquote>
-<p>而我们知道<br>$$<br>\vec{X_0X} = (x - x_0,y - y_0,z - z_0) \<br>\vec{n} = (A,B,C)<br>$$<br>所以有<br>$$<br>\vec{X_0X} \cdot \vec{n} = (x - x_0,y - y_0,z - z_0) \cdot (A,B,C) = 0 \<br>\Downarrow \<br>A(x - x_0) + B(y - y_0) + C(z - z_0) = 0<br>$$<br>平面上的点都满足上述方程，不在平面上的点都不满足上述方程，上述方程称为平面的方程，平面称为方程的图形．<br>上述方程称为<strong>平面的点法式方程</strong>。<br>由点法式方程我们又可以推出：<br>$$<br>A(x - x_0) + B(y - y_0) + C(z - z_0) = 0 \<br>\Downarrow \<br>Ax + By + Cz - (Ax_0 + By_0 + Cz_0) = 0<br>$$<br>这里设定$D =  - (Ax_0 + By_0 + Cz_0)$,则有平面的一般方程（A,B,C不同时为零）：<br>$$<br>Ax + By + Cz + D = 0<br>$$<br>又可由:<br>$$<br>Ax+By+Cz = (A,B,C) \cdot (x,y,z) \<br>\vec{n} = (A,B,C) \<br>X = (x,y,z)<br>$$<br>导出公式<br>$$<br>\vec{n} \cdot X + D = 0<br>$$</p>
-<h3 id="2-点到平面的投影"><a href="#2-点到平面的投影" class="headerlink" title="2. 点到平面的投影"></a>2. 点到平面的投影</h3><p>假设我们有一个点光源$I$，有个物体在光源$I$和投影平面中间，物体上的点为$v$，现在我们要求出一个变换矩阵$M$，这个矩阵$M$能将顶点$v$投影到平面上，得到$v’$，即满足<br>$$<br>v’ = Mv<br>$$<br>现在让我们从光源$I$处引一条射线经过顶点$v$,则有射线方程<br>$$<br>r(t) = I + t\vec{d}<br>$$<br>其中$\vec{d}$为射线方向<br>$$<br>\vec{d} = v - I<br>$$<br>而要求出射线方程 $r(t)$ 与平面方程 $\vec{n} \cdot X + D = 0$ 的交点，即求出当 $r(t) = X$ 时，$t$的值是多少（记为$\hat{t}$）。<br>将$r(\hat{t})$ 代入平面方程，可得：<br>$$<br>\vec{n} \cdot (I + \hat{t}\vec{d}) + D = 0 \<br>\Downarrow \<br>\hat{t} = -\frac{\vec{n} \cdot I + D}{\vec{n} \cdot \vec{d}}<br>$$<br>所以可得到射线与平面的交点（同时也是点$v$到平面的投影点）$v’$为：<br>$$<br>v’ = r(\hat{t}) = I - \frac{\vec{n} \cdot I + D}{\vec{n} \cdot (v - I)} (v - I) \<br>\Downarrow \<br>v’ = \frac{(\vec{n} \cdot (v - I))I - (\vec{n} \cdot I + D)(v - I)}{\vec{n} \cdot (v - I)} \<br>\Downarrow \<br>v’ = \frac{(\vec{n} \cdot I + D)v - (\vec{n} \cdot v + D)I}{\vec{n} \cdot I - \vec{n} \cdot v}<br>$$</p>
-<h3 id="3-矩阵形式"><a href="#3-矩阵形式" class="headerlink" title="3. 矩阵形式"></a>3. 矩阵形式</h3><h4 id="3-1-齐次坐标"><a href="#3-1-齐次坐标" class="headerlink" title="3.1 齐次坐标"></a>3.1 齐次坐标</h4><p>引用来自<a href="http://blog.csdn.net/popy007/article/details/1797121" target="_blank" rel="external">Twinsen个人博客的文章《深入探索透视投影变换》</a>： </p>
-<blockquote>
-<p>给定一个基$\ o\ \vec{a}\ \vec{b}\ \vec{c}$：<br>(A) 对于一个向量$\vec{v}$，可以找到一组坐标$(v_1,v_2,v_3)$，使得$\vec{v} = v_1 \vec{a} + v_2 \vec{b} + v_3 \vec{c}$<br>(B) 而对于一个点$p$，则可以找到一组坐标$(p_1,p_2,p_3)$，使得 $p - o = p_1 \vec{a} + p_2 \vec{b} + p_3 \vec{c}$     </p>
-</blockquote>
-<p>从上面对向量和点的表达，我们可以看出为了在坐标系中表示一个点（如$p$），我们把点的位置看作是对这个基的原点$o$所进行的一个位移，即一个向量 —— $p - o$（有的书中把这样的向量叫做位置向量——起始于坐标原点的特殊向量），我们在表达这个向量的同时用等价的方式表达出了点$p$: </p>
-<blockquote>
-<p>(C) $p = o + p_1 \vec{a} + p_2 \vec{b} + p_3 \vec{c}$</p>
-</blockquote>
-<p>这时候把(1)和(3)写成矩阵形式:<br>$$<br>\vec{v} = (\vec{a},\vec{b},\vec{c},o) \times \left(<br>\begin{matrix}v_1 \ v_2 \ v_3 \ 0<br>\end{matrix}<br>\right) \<br>p = (\vec{a},\vec{b},\vec{c},o) \times<br>\left(<br>\begin{matrix}<br>p_1 \ p_2 \ p_3 \ 1<br>\end{matrix}<br>\right)<br>$$<br>这里$(\vec{a},\vec{b},\vec{c},o)$是坐标基矩阵,右边的列向量分别是向量v和点p在基下的坐标。</p>
-<h4 id="3-2-投影点-v’-转换到齐次坐标系"><a href="#3-2-投影点-v’-转换到齐次坐标系" class="headerlink" title="3.2 投影点$v’$转换到齐次坐标系"></a>3.2 投影点$v’$转换到齐次坐标系</h4><p>还是引用来自<a href="http://blog.csdn.net/popy007/article/details/1797121" target="_blank" rel="external">Twinsen个人博客的文章《深入探索透视投影变换》</a>：     </p>
-<blockquote>
-<p> 下面是如何在普通坐标(Ordinary Coordinate)和齐次坐标(Homogeneous Coordinate)之间进行转换：  </p>
-<ul>
-<li><p>从普通坐标转换成齐次坐标时，</p>
-<blockquote>
-<ul>
-<li>如果$(x,y,z)$是个点，则变为$(x,y,z,1)$;   </li>
-<li>如果$(x,y,z)$是个向量，则变为$(x,y,z,0)$;   </li>
-</ul>
-</blockquote>
-</li>
-<li><p>从齐次坐标转换成普通坐标时，</p>
-<blockquote>
-<ul>
-<li>如果是$(x,y,z,1)$，则知道它是个点，变成$(x,y,z)$;</li>
-<li>如果是$(x,y,z,0)$，则知道它是个向量，仍然变成$(x,y,z)$;</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-<hr>
-<p>此外，对于一个普通坐标的点$P=(P_x, P_y, P_z)$，有对应的一族齐次坐标$(wP_x, wP_y, wP_z, w)$，其中$w$不等于零。</p>
-<hr>
-<p>因此，</p>
-<ul>
-<li>如果把一个点从普通坐标变成齐次坐标，给$x,y,z$乘上同一个非零数$w$，然后增加第4个分量$w$；</li>
-<li>如果把一个齐次坐标转换成普通坐标，把前三个坐标同时除以第4个坐标$w$，然后去掉第4个分量$w$。</li>
-</ul>
-</blockquote>
-<p>因此如上所述，可以将投影点$v’ = (v’_x,v’_y,v’_z)$:<br>$$<br>v’_x = \frac{(\vec{n} \cdot I + D)v_x - (\vec{n} \cdot v + D)I_x} {\vec{n} \cdot I - \vec{n} \cdot v}<br>\<br>v’_y = \frac{(\vec{n} \cdot I + D)v_y - (\vec{n} \cdot v + D)I_y} {\vec{n} \cdot I - \vec{n} \cdot v}<br>\<br>v’_y = \frac{(\vec{n} \cdot I + D)v_z - (\vec{n} \cdot v + D)I_z} {\vec{n} \cdot I - \vec{n} \cdot v}<br>$$<br>转换为齐次坐标$(v’_x,v’_y,v’_z,1)$.<br>又有，普通坐标(Ordinary Coordinate)对应齐次坐标系(Homogeneous Coordinate)有<strong>一族</strong>齐次坐标：<br>$$<br>(x/w,y/w,z/w,1) \equiv (x,y,z,w)<br>$$<br>因此可以将分母部分提取出来分到$w$中，可得：</p>
-<blockquote>
-<p>$$<br>v’_x = (\vec{n} \cdot I + D)v_x - (\vec{n} \cdot v + D)I_x<br>\<br>\Downarrow \<br>\<br>v’_x = (\vec{n} \cdot I + D)v_x - (n_x v_x + n_y v_y + n_z v_z + D)I_x<br>\<br>\Downarrow \<br>\<br>v’_x = (\vec{n} \cdot I + D - n_x)v_x - n_y I_x v_y - n_z I_x v_z - D I_x<br>$$</p>
-<hr>
-<p>$$<br>v’_y = (\vec{n} \cdot I + D)v_y - (\vec{n} \cdot v + D)I_y<br>\<br>\Downarrow \<br>\<br>v’_y = (\vec{n} \cdot I + D)v_y - (n_x v_x + n_y v_y + n_z v_z + D)I_y<br>\<br>\Downarrow \<br>\<br>v’_y = -n_x I_y v_x + (\vec{n} \cdot I + D - n_y)v_y - n_z I_y v_z - D I_y<br>$$</p>
-<hr>
-<p>$$<br>v’_z = (\vec{n} \cdot I + D)v_z - (\vec{n} \cdot v + D)I_z<br>\<br>\Downarrow \<br>\<br>v’_z = (\vec{n} \cdot I + D)v_z - (n_x v_x + n_y v_y + n_z v_z + D)I_z<br>\<br>\Downarrow \<br>\<br>v’_z = -n_x I_z v_x -n_y I_z v_y + (\vec{n} \cdot I + D - n_z)v_z - D I_z<br>$$</p>
-<hr>
-<p>$$<br>v’_w = \vec{n} \cdot I - \vec{n} \cdot v<br>\<br>\Downarrow \<br>\<br>v’_w = \vec{n} \cdot I - (n_x v_x + n_y v_y + n_z v_z)<br>\<br>\Downarrow \<br>\<br>v’_w = - n_x v_x - n_y v_y - n_z v_z + \vec{n} \cdot I<br>$$<br>由$v’=Mv$以及上式可得，矩阵$M$为：<br>$$<br>M=\begin{bmatrix}<br>   \vec{n} \cdot I + D - n_x I_x &amp; - n_y I_x &amp; - n_z I_x &amp; - D I_x \<br>   -n_x I_y &amp; \vec{n} \cdot I + D - n_y I_y &amp; - n_z I_y &amp; - D I_y \<br>   -n_x I_z &amp; -n_y I_z &amp; \vec{n} \cdot I + D - n_z I_z &amp; - D I_z \<br>   -n_x &amp; -n_y &amp; -n_z &amp; \vec{n} \cdot I<br>\end{bmatrix}<br>$$<br>其中$D = -(Ax_0 + By_0 + Cz_0)$。</p>
-</blockquote>
-<h3 id="4-v’-w-特点"><a href="#4-v’-w-特点" class="headerlink" title="4. $v’_w$特点"></a>4. $v’_w$特点</h3><p>同上面可知<br>$$<br>v’_w = \vec{n} \cdot (I - v)<br>\<br>\Downarrow \<br>\<br>v’_w = |\vec{n}| <em> |\overrightarrow{I - v}| </em> \cos(&lt;\vec{n},\overrightarrow{I - v}&gt;)<br>$$<br>其中，$&lt;\vec{n},\overrightarrow{I - v}&gt;$表示向量 $\vec{n}$ 与向量 $\overrightarrow{I - v}$ 之间的夹角。<br>而根据cos函数图像可知，当这两个向量夹角超过$90^\circ$时，值为负。此时的影子不该被投射到平面上。<br>即$v’_w &lt; 0$时，会产生<strong>anti-shadow</strong>.(表示实现这种投影后没出现anti-shadow，不知道为何一到这种情况就看不见阴影)</p>
-<blockquote>
-<p><strong>anti-shadow</strong><br><img src="http://note.youdao.com/yws/api/personal/file/WEBf7ec614e95567fbb743b885b5a9c68a2?method=download&amp;shareKey=5aacb63ac647ee35e2c489798ddd0085" alt="image"></p>
-</blockquote>
-
+<p>因此，若假设已知:<br />
+&gt; 1. 平面法线向量 <span class="math inline">\(\vec{n} = (A,B,C)\)</span>,<br />
+&gt; 2. 平面上一点<span class="math inline">\(X_0(x_0,y_0,z_0)\)</span></p>
+<p>设定: &gt; 平面上任意一点为<span class="math inline">\(X(x,y,z)\)</span></p>
+<p>则，必有:<br />
+<span class="math inline">\(\vec{X_0M}\ \bot\ \vec{n} \Rightarrow \vec{X_0X} \cdot \vec{n} = 0\)</span></p>
       
     </div>
     
@@ -246,6 +183,10 @@
       
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/08/26/Graphics/Shadows/Planar Projection Shadows/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
