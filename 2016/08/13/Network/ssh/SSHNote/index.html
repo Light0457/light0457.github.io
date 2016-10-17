@@ -6,31 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>SSH使用杂记 | Light&#39;s space</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="SSH网络协议使用杂记最近寻觅各git托管服务，都选择了用ssh协议来拉取。以及最近因为各种原因接触得比较多，碰到的问题也多了，在这里面记录一下。  
-
-使用ssh-keygen -t rsa -C &amp;quot;youremail-address&amp;quot;
-创建ssh密钥时，
-要求输入生成文件的目录，此时输入的目录需要是完整路径（也不能用～表示Home目录） 
-要求输入passphrase,这个">
+  <meta name="description" content="SSH网络协议使用杂记
+最近寻觅各git托管服务，都选择了用ssh协议来拉取。以及最近因为各种原因接触得比较多，碰到的问题也多了，在这里面记录一下。
+* 使用 ssh-keygen -t rsa -C “youremail-address” 创建ssh密钥时， 1. 要求输入生成文件的目录，此时输入的目录需要是完整路径（也不能用～表示Home目录） 2. 要求输入passphrase,这个从目前的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SSH使用杂记">
-<meta property="og:url" content="http://light0457.github.io/2016/08/13/ssh/SSHNote/index.html">
+<meta property="og:url" content="http://light0457.github.io/2016/08/13/Network/ssh/SSHNote/index.html">
 <meta property="og:site_name" content="Light's space">
-<meta property="og:description" content="SSH网络协议使用杂记最近寻觅各git托管服务，都选择了用ssh协议来拉取。以及最近因为各种原因接触得比较多，碰到的问题也多了，在这里面记录一下。  
-
-使用ssh-keygen -t rsa -C &amp;quot;youremail-address&amp;quot;
-创建ssh密钥时，
-要求输入生成文件的目录，此时输入的目录需要是完整路径（也不能用～表示Home目录） 
-要求输入passphrase,这个">
+<meta property="og:description" content="SSH网络协议使用杂记
+最近寻觅各git托管服务，都选择了用ssh协议来拉取。以及最近因为各种原因接触得比较多，碰到的问题也多了，在这里面记录一下。
+* 使用 ssh-keygen -t rsa -C “youremail-address” 创建ssh密钥时， 1. 要求输入生成文件的目录，此时输入的目录需要是完整路径（也不能用～表示Home目录） 2. 要求输入passphrase,这个从目前的">
 <meta property="og:updated_time" content="2016-08-13T00:29:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSH使用杂记">
-<meta name="twitter:description" content="SSH网络协议使用杂记最近寻觅各git托管服务，都选择了用ssh协议来拉取。以及最近因为各种原因接触得比较多，碰到的问题也多了，在这里面记录一下。  
-
-使用ssh-keygen -t rsa -C &amp;quot;youremail-address&amp;quot;
-创建ssh密钥时，
-要求输入生成文件的目录，此时输入的目录需要是完整路径（也不能用～表示Home目录） 
-要求输入passphrase,这个">
+<meta name="twitter:description" content="SSH网络协议使用杂记
+最近寻觅各git托管服务，都选择了用ssh协议来拉取。以及最近因为各种原因接触得比较多，碰到的问题也多了，在这里面记录一下。
+* 使用 ssh-keygen -t rsa -C “youremail-address” 创建ssh密钥时， 1. 要求输入生成文件的目录，此时输入的目录需要是完整路径（也不能用～表示Home目录） 2. 要求输入passphrase,这个从目前的">
   
     <link rel="alternative" href="/atom.xml" title="Light&#39;s space" type="application/atom+xml">
   
@@ -108,7 +99,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Alfred/" style="font-size: 10px;">Alfred</a> <a href="/tags/Circular/" style="font-size: 10px;">Circular</a> <a href="/tags/Image-Effect/" style="font-size: 10px;">Image Effect</a> <a href="/tags/Shadowsocks/" style="font-size: 10px;">Shadowsocks</a> <a href="/tags/Text/" style="font-size: 10px;">Text</a> <a href="/tags/Unity/" style="font-size: 10px;">Unity</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/plist/" style="font-size: 10px;">plist</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a>
+						<a href="/tags/Alfred/" style="font-size: 10px;">Alfred</a> <a href="/tags/C/" style="font-size: 10px;">C#</a> <a href="/tags/Circular/" style="font-size: 10px;">Circular</a> <a href="/tags/Image-Effect/" style="font-size: 10px;">Image Effect</a> <a href="/tags/KCP/" style="font-size: 10px;">KCP</a> <a href="/tags/Network/" style="font-size: 10px;">Network</a> <a href="/tags/Planar/" style="font-size: 10px;">Planar</a> <a href="/tags/Projection-Matrix/" style="font-size: 10px;">Projection Matrix</a> <a href="/tags/Shadows/" style="font-size: 10px;">Shadows</a> <a href="/tags/Shadowsocks/" style="font-size: 10px;">Shadowsocks</a> <a href="/tags/TCP/" style="font-size: 10px;">TCP</a> <a href="/tags/Text/" style="font-size: 10px;">Text</a> <a href="/tags/Unity/" style="font-size: 10px;">Unity</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/plist/" style="font-size: 10px;">plist</a> <a href="/tags/python/" style="font-size: 10px;">python</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a>
 					</div>
 				</section>
 				
@@ -158,10 +149,10 @@
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-ssh/SSHNote" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Network/ssh/SSHNote" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/08/13/ssh/SSHNote/" class="article-date">
+      <a href="/2016/08/13/Network/ssh/SSHNote/" class="article-date">
   	<time datetime="2016-08-13T00:29:04.000Z" itemprop="datePublished">2016-08-13</time>
 </a>
     </div>
@@ -195,32 +186,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="SSH网络协议使用杂记"><a href="#SSH网络协议使用杂记" class="headerlink" title="SSH网络协议使用杂记"></a><a href="https://zh.wikipedia.org/wiki/Secure_Shell" target="_blank" rel="external">SSH网络协议</a>使用杂记</h1><p>最近寻觅各git托管服务，都选择了用ssh协议来拉取。以及最近因为各种原因接触得比较多，碰到的问题也多了，在这里面记录一下。  </p>
-<ul>
-<li>使用<pre><code>ssh-keygen -t rsa -C &quot;youremail-address&quot;
-</code></pre>创建ssh密钥时，<ol>
-<li>要求输入生成文件的目录，此时输入的目录需要是完整路径（也不能用～表示Home目录） </li>
-<li>要求输入passphrase,这个从目前的用法看就是即将生成的密钥文件的密码，把它添加到ssh agnet的时候需要输入这个密码</li>
-</ol>
-</li>
-</ul>
+        <h1 id="ssh网络协议使用杂记"><a href="https://zh.wikipedia.org/wiki/Secure_Shell" target="_blank" rel="external">SSH网络协议</a>使用杂记</h1>
+<p>最近寻觅各git托管服务，都选择了用ssh协议来拉取。以及最近因为各种原因接触得比较多，碰到的问题也多了，在这里面记录一下。<br>
+* 使用 ssh-keygen -t rsa -C “youremail-address” 创建ssh密钥时， 1. 要求输入生成文件的目录，此时输入的目录需要是完整路径（也不能用～表示Home目录） 2. 要求输入passphrase,这个从目前的用法看就是即将生成的密钥文件的密码，把它添加到ssh agnet的时候需要输入这个密码</p>
 <a id="more"></a>
 <ul>
-<li><p>在ssh-add密钥后，碰到个问题是重启后还要再添加一遍。</p>
-<pre><code>ssh-add ~/.ssh/xxx_rsa  
-</code></pre><p>这个原因在于ssh-add添加密钥文件，只是用于添加指定文件到当前运行中的ssh agent的session中，重启后session重建，添加的密钥文件也就被重置了（似乎如果创建的密钥文件是默认名id_rsa，则不会有这个问题。可能重启后会添加默认的密钥文件吧）。<br>解决办法有两个：  </p>
-<ol>
-<li><p>在Mac OS X上，系统自带有keychain access这个管理工具，添加密钥文件可以把密钥文件一起添加到keychain access中，方法是ssh-add时多带一个-K参数   </p>
-<pre><code>ssh-add -K ~/.ssh/xxx_rsa
-</code></pre></li>
-<li><p>在~/.ssh中添加config文件，添加对应网站要使用的密钥文件  </p>
-<pre><code>Host gitlab.com  
-RSAAuthentication yes 
-IdentityFile ~/.ssh/xxx_rsa
-</code></pre></li>
-</ol>
+<li>在ssh-add密钥后，碰到个问题是重启后还要再添加一遍。 ssh-add ~/.ssh/xxx_rsa<br>
+这个原因在于ssh-add添加密钥文件，只是用于添加指定文件到当前运行中的ssh agent的session中，重启后session重建，添加的密钥文件也就被重置了（似乎如果创建的密钥文件是默认名id_rsa，则不会有这个问题。可能重启后会添加默认的密钥文件吧）。<br>
+解决办法有两个：<br>
 </li>
 </ul>
+<ol style="list-style-type: decimal">
+<li><p>在Mac OS X上，系统自带有keychain access这个管理工具，添加密钥文件可以把密钥文件一起添加到keychain access中，方法是ssh-add时多带一个-K参数</p>
+<pre><code> ssh-add -K ~/.ssh/xxx_rsa</code></pre></li>
+<li><p>在~/.ssh中添加config文件，添加对应网站要使用的密钥文件</p>
+<pre><code> Host gitlab.com  
+ RSAAuthentication yes 
+ IdentityFile ~/.ssh/xxx_rsa</code></pre></li>
+</ol>
 
       
     </div>
